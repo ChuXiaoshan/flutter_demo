@@ -18,3 +18,11 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/search_black.webp
+    - assets/images/tabbar_chat_c.webp
+    - assets/images/tabbar_chat_s.webp
+    - assets/images/tabbar_contacts_c.webp
+    - assets/images/tabbar_contacts_s.webp
+    - assets/images/tabbar_discover_c.webp
+    - assets/images/tabbar_discover_s.webp
+    - assets/images/tabbar_me_c.webp
+    - assets/images/tabbar_me_s.webp

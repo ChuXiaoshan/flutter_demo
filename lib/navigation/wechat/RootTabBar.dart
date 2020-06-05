@@ -2,8 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterdemo/wechat/ComMomBar.dart';
-import 'package:flutterdemo/wechat/i18n.dart';
+import 'package:flutterdemo/navigation/wechat/ComMomBar.dart';
 
 class RootTabBar extends StatefulWidget {
   RootTabBar({this.pages, this.currentIndex = 0});
@@ -44,13 +43,13 @@ class RootTabBarState extends State<RootTabBar> {
       type: BottomNavigationBarType.fixed,
       currentIndex: currentIndex,
       fixedColor: Colors.green,
-      unselectedItemColor: Colors.green,
+      unselectedItemColor: Colors.grey[800],
       onTap: (int index) {
         setState(() => currentIndex = index);
       },
       unselectedFontSize: 18.0,
       selectedFontSize: 18.0,
-      elevation: 10,
+      elevation: 0,
     );
 
     var appBar = new ComMomBar(
@@ -74,11 +73,11 @@ class RootTabBarState extends State<RootTabBar> {
           child: bottomNavigationBar,
         ),
       ),
-      appBar: widget.pages[currentIndex].title != S.of(context).me ? appBar : null,
+      appBar: widget.pages[currentIndex].title != "我的" ? appBar : null,
       body: new ScrollConfiguration(
         behavior: MyBehavior(),
         child: new PageView.builder(
-          itemBuilder: (BuildContext context, int index) => widget.pages[index].page,
+          itemBuilder: (BuildContext context, int index) => widget.pages[currentIndex].page,
           controller: pageController,
           itemCount: pages.length,
           physics: Platform.isAndroid ? new ClampingScrollPhysics() : new NeverScrollableScrollPhysics(),
