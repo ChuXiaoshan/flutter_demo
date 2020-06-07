@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterdemo/navigation/BtmNavBarExp.dart';
 import 'package:flutterdemo/navigation/wechat/RootPage.dart';
+import 'package:flutterdemo/pages/banners/BannerPage1.dart';
 
 class MyHomePage extends StatelessWidget {
   @override
@@ -44,7 +45,7 @@ class MyHomePage extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return BtmNavBarExp();
+                    return BannerPage1();
                   },
                 ),
               );
