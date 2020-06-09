@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterdemo/navigation/BtmNavBarExp.dart';
-import 'package:flutterdemo/navigation/wechat/RootPage.dart';
-import 'package:flutterdemo/pages/banners/BannerPage1.dart';
+
+import 'pages/banners/BannerPage1.dart';
+import 'pages/navigation/BtmNavBarExp.dart';
+import 'pages/navigation/wechat/RootPage.dart';
 
 class MyHomePage extends StatelessWidget {
   @override

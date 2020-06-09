@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterdemo/navigation/wechat/HomePage.dart';
+import 'package:flutterdemo/pages/navigation/wechat/HomePage.dart';
 
 import 'RootTabBar.dart';
 

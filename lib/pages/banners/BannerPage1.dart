@@ -47,16 +47,6 @@ class BannerPage1 extends StatelessWidget {
         children: <Widget>[
           _buildSlider(),
           _buildSlider(),
-          _buildSlider(),
-          _buildSlider(),
-          _buildSlider(),
-          _buildSlider(),
-          _buildSlider(),
-          _buildSlider(),
-          _buildSlider(),
-          _buildSlider(),
-          _buildSlider(),
-          _buildSlider(),
         ],
       ),
     );
