@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterdemo/pages/list/animated_list_one.dart';
 
-import 'pages/banners/BannerPage1.dart';
+import 'pages/banners/banner_page1.dart';
 import 'pages/navigation/BtmNavBarExp.dart';
 import 'pages/navigation/wechat/RootPage.dart';
 
@@ -52,6 +53,19 @@ class MyHomePage extends StatelessWidget {
               );
             },
             child: new Text("Banner"),
+          ),
+          new RaisedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return AnimatedListOnePage();
+                  },
+                ),
+              );
+            },
+            child: new Text("List"),
           ),
         ],
       ),
