@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutterdemo/MyApp.dart';
+import 'package:flutterdemo/my_app.dart';
 
 void main() {
   runApp(MyApp());
