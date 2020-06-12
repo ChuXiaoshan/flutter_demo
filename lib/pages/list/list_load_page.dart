@@ -12,6 +12,7 @@ class ListLoadPage extends StatefulWidget {
 class _ListLoadPageState extends State<ListLoadPage> {
   List data = [];
   int page = 0;
+  bool loading = false;
 
   ScrollController _scrollController;
 
@@ -35,28 +36,44 @@ class _ListLoadPageState extends State<ListLoadPage> {
       ),
       body: RefreshIndicator(
         onRefresh: _onRefresh,
-        child: ListView.builder(
+        child: ListView.separated(
             controller: _scrollController,
             itemCount: data.length + 1,
             itemBuilder: (context, index) {
-              return (index == data.length) ? _loadMoreWidget() : _itemWidget(context, index);
-            }),
+              if (index == data.length && index > 51) {
+                loading = true;
+                return _endWidget();
+              } else {
+                if (index == data.length) {
+                  return _loadMoreWidget();
+                } else {
+                  return _itemWidget(context, index);
+                }
+              }
+            },
+            separatorBuilder: (context, index) => Divider(height: .0)),
       ),
     );
   }
 
+  @override
+  void dispose() {
+    _scrollController?.dispose();
+    super.dispose();
+  }
+
   _fetchData() async {
-    Response response = await Dio().get("https://www.wanandroid.com/article/list/${this.page}/json");
-    var json = JsonDecoder().convert(response.toString());
-    print(json);
-    print(response);
-    var ddd = json["data"]["datas"];
-    print("---json--->");
-    print(ddd);
-    return ddd;
+    if (!loading) {
+      loading = true;
+      Response response = await Dio().get("https://www.wanandroid.com/article/list/${this.page}/json");
+      var json = JsonDecoder().convert(response.toString());
+      loading = false;
+      return json["data"]["datas"];
+    }
   }
 
   Future<dynamic> _onRefresh() {
+    loading = false;
     data.clear();
     this.page = 0;
     return _fetchData().then((data) {
@@ -88,17 +105,15 @@ class _ListLoadPageState extends State<ListLoadPage> {
       child: new Center(child: new CircularProgressIndicator()),
     );
   }
-}
 
-class ArticleList {
-  final String title;
-  final String chapterName;
-
-  ArticleList(this.title, this.chapterName);
-
-  ArticleList.fromJson(Map<String, dynamic> json)
-      : title = json['title'],
-        chapterName = json['chapterName'];
-
-  Map<String, dynamic> toJson() => {"title": title, "chapterName": chapterName};
+  _endWidget() {
+    return new Padding(
+      padding: const EdgeInsets.all(15.0),
+      child: new Center(
+          child: Text(
+        "到底啦！",
+        style: TextStyle(color: Colors.grey[500]),
+      )),
+    );
+  }
 }
