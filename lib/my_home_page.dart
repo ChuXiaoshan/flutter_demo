@@ -8,6 +8,8 @@ class MyHomePage extends StatelessWidget {
     {"title": "list_horizontal", "page": "list_horizontal", "icon": Icons.list},
     {"title": "list_load", "page": "list_load", "icon": Icons.list},
     {"title": "bottom", "page": "bottom", "icon": Icons.vertical_align_bottom},
+    {"title": "sign", "page": "sign", "icon": Icons.assignment_ind},
+    {"title": "sign_up", "page": "sign_up", "icon": Icons.ondemand_video},
   ];
 
   _buildItem(BuildContext context, int index) {

@@ -9,7 +9,7 @@ void main() {
 
   /// Android状态栏透明
   if (Platform.isAndroid) {
-    SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(statusBarColor: Colors.transparent);
-    SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+    SystemUiOverlayStyle style = SystemUiOverlayStyle(statusBarColor: Colors.transparent, statusBarIconBrightness: Brightness.dark);
+    SystemChrome.setSystemUIOverlayStyle(style);
   }
 }
