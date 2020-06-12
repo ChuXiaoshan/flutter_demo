@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterdemo/pages/web/browser_page.dart';
 
 import 'my_home_page.dart';
 import 'pages/banners/banner_page.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         "list_vertical": (_) => AnimatedListOnePage(),
         "list_horizontal": (_) => HorizontalListPage(),
         "list_load": (_) => ListLoadPage(),
+        "browser": (_) => BrowserPage(),
       },
       home: MyHomePage(),
     );

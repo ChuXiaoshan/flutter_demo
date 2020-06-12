@@ -94,6 +94,12 @@ class _ListLoadPageState extends State<ListLoadPage> {
 
   _itemWidget(BuildContext context, int index) {
     return ListTile(
+      onTap: () {
+        Navigator.of(context).pushNamed(
+          "browser",
+          arguments: {"title": data[index]['title'], "url": data[index]['link']},
+        );
+      },
       title: Text(data[index]['title']),
       subtitle: Text(data[index]['chapterName']),
     );
