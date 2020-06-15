@@ -72,7 +72,20 @@ class SignUpPage extends StatelessWidget {
                     ),
                   ),
                   Container(child: Divider(color: Colors.blue.shade400), padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0)),
+                  SizedBox(height: 10.0),
                 ],
+              ),
+            ),
+          ),
+          Container(
+            height: 420,
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: RaisedButton(
+                onPressed: () {},
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40.0)),
+                child: Text("Sign up", style: TextStyle(color: Colors.white70)),
+                color: Colors.blue,
               ),
             ),
           ),

@@ -124,8 +124,13 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             SizedBox(height: 20),
-            Center(
-              child: Text("forgot password ?", style: TextStyle(color: Colors.red, fontSize: 12, fontWeight: FontWeight.w700)),
+            GestureDetector(
+              child: Center(
+                child: Text("forgot password ?", style: TextStyle(color: Colors.red, fontSize: 12, fontWeight: FontWeight.w700)),
+              ),
+              onTap: () {
+                SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+              },
             ),
             SizedBox(height: 40),
             Row(
