@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterdemo/pages/home/home1_page.dart';
 import 'package:flutterdemo/pages/tab/tab1_page.dart';
 
 import 'my_home_page.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         "tab1": (_) => Tab1Page(),
         "sign": (_) => LoginPage(),
         "home": (_) => MyHomePage(),
+        "home1": (_) => Home1Page(),
         "sign_up": (_) => SignUpPage(),
         "banner": (_) => BannerPage1(),
         "bottom": (_) => BtmNavBarExp(),

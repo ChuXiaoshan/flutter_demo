@@ -13,6 +13,7 @@ class MyHomePage extends StatelessWidget {
     {"title": "sign_up1", "page": "sign_up1", "icon": Icons.ondemand_video},
     {"title": "settings1", "page": "settings1", "icon": Icons.settings},
     {"title": "tab1", "page": "tab1", "icon": Icons.tab},
+    {"title": "home1", "page": "home1", "icon": Icons.home},
   ];
 
   _buildItem(BuildContext context, int index) {
