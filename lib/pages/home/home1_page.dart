@@ -10,10 +10,131 @@ class Home1Page extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: ListView(
+        padding: EdgeInsets.only(top: 0),
         children: <Widget>[
           _buildFeatureNews(),
           const SizedBox(height: 10.0),
+          _buildHeading("Popular posts"),
+          _buildListItem(Colors.green.shade200),
+          _buildListItem(Colors.red.shade200),
+          _buildListItem(Colors.blue.shade200),
+          _buildListItem(Colors.red.shade200),
+          _buildHeading("Browse by category"),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 4.0),
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    margin: EdgeInsets.symmetric(horizontal: 4.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.green.shade200,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    margin: EdgeInsets.symmetric(horizontal: 4.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.green.shade200,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    margin: EdgeInsets.symmetric(horizontal: 4.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.green.shade200,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    margin: EdgeInsets.symmetric(horizontal: 4.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.green.shade200,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    margin: EdgeInsets.symmetric(horizontal: 4.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.green.shade200,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    margin: EdgeInsets.symmetric(horizontal: 4.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.green.shade200,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
+      ),
+    );
+  }
+
+  _buildListItem(Color color) {
+    return InkWell(
+      onTap: () {},
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+        child: Row(
+          children: <Widget>[
+            Container(
+              height: 100,
+              width: 100,
+              margin: EdgeInsets.only(right: 10.0),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: color,
+              ),
+            ),
+            Expanded(
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    "Lorem ipsum dolor sit amet, consecteutur adsd Ut adipisicing dolore incididunt minim",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: 10),
+                  Text("Mollit aliquip fugiat veniam reprehenderit irure commodo eu aute ex commodo")
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -26,7 +147,7 @@ class Home1Page extends StatelessWidget {
           Expanded(
             child: Text(
               title,
-              style: shadedTitle,
+              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.grey.shade600),
             ),
           ),
           MaterialButton(
@@ -49,7 +170,8 @@ class Home1Page extends StatelessWidget {
 
   _buildFeatureNews() {
     return RoundedContainer(
-      height: 270,
+      padding: EdgeInsets.only(top: 40),
+      height: 310,
       borderRadius: BorderRadius.circular(0),
       color: Colors.blue,
       child: Column(

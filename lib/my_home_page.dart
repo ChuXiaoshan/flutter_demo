@@ -1,20 +1,38 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'pages/page_config.dart';
+
+// ignore: must_be_immutable
 class MyHomePage extends StatelessWidget {
-  final List<Map> items = [
-    {"title": "banner", "page": "banner", "icon": Icons.photo},
-    {"title": "list_vertical", "page": "list_vertical", "icon": Icons.list},
-    {"title": "list_horizontal", "page": "list_horizontal", "icon": Icons.list},
-    {"title": "list_load", "page": "list_load", "icon": Icons.list},
-    {"title": "bottom", "page": "bottom", "icon": Icons.vertical_align_bottom},
-    {"title": "sign", "page": "sign", "icon": Icons.assignment_ind},
-    {"title": "sign_up", "page": "sign_up", "icon": Icons.ondemand_video},
-    {"title": "sign_up1", "page": "sign_up1", "icon": Icons.ondemand_video},
-    {"title": "settings1", "page": "settings1", "icon": Icons.settings},
-    {"title": "tab1", "page": "tab1", "icon": Icons.tab},
-    {"title": "home1", "page": "home1", "icon": Icons.home},
-  ];
+  List<Map> items;
+  Color primaryColor;
+
+  @override
+  Widget build(BuildContext context) {
+    Map map = ModalRoute.of(context).settings.arguments;
+    items = map != null ? showItems : mainItems;
+    primaryColor = map != null ? Colors.cyan.shade900 : Colors.purple.shade900;
+    return new Scaffold(
+      appBar: new AppBar(
+        backgroundColor: primaryColor,
+        title: new Text(map != null ? map["title"] : "Flutter Demo"),
+        elevation: 10,
+      ),
+      body: GridView.builder(
+        physics: BouncingScrollPhysics(),
+        padding: EdgeInsets.all(4),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          childAspectRatio: 1,
+        ),
+        itemCount: items.length,
+        itemBuilder: (context, index) {
+          return _buildItem(context, index);
+        },
+      ),
+    );
+  }
 
   _buildItem(BuildContext context, int index) {
     return Card(
@@ -22,39 +40,18 @@ class MyHomePage extends StatelessWidget {
       shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4.0))),
       child: InkWell(
         onTap: () {
-          Navigator.pushNamed(context, items[index]['page']);
+          Navigator.of(context).pushNamed(items[index]['page'], arguments: {"title": items[index]['title']});
         },
         borderRadius: new BorderRadius.circular(4.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Icon(items[index]["icon"], color: Colors.blue),
+            Icon(items[index]["icon"], color: primaryColor),
             SizedBox(height: 5.0),
-            Text(items[index]['title'], style: TextStyle(color: Colors.blue)),
+            Text(items[index]['title'], style: TextStyle(color: primaryColor)),
           ],
         ),
       ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("Flutter Demo"),
-        elevation: 10,
-      ),
-      body: GridView.builder(
-          physics: BouncingScrollPhysics(),
-          padding: EdgeInsets.all(4),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            childAspectRatio: 1,
-          ),
-          itemCount: items.length,
-          itemBuilder: (context, index) {
-            return _buildItem(context, index);
-          }),
     );
   }
 }

@@ -21,13 +21,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        primaryColor: Colors.purple.shade900,
+        primaryColorDark: Color(0x12005E),
+        primaryColorLight: Colors.purpleAccent.shade700,
       ),
       routes: {
         "tab1": (_) => Tab1Page(),
         "sign": (_) => LoginPage(),
-        "home": (_) => MyHomePage(),
+        "show": (_) => MyHomePage(),
         "home1": (_) => Home1Page(),
         "sign_up": (_) => SignUpPage(),
         "banner": (_) => BannerPage1(),
