@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterdemo/pages/home/home1_page.dart';
+import 'package:flutterdemo/pages/show/bike_detail.dart';
 import 'package:flutterdemo/pages/tab/tab1_page.dart';
 
 import 'my_home_page.dart';
@@ -21,10 +22,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primaryColor: Colors.purple.shade900,
-        primaryColorDark: Color(0x12005E),
-        primaryColorLight: Colors.purpleAccent.shade700,
-      ),
+          primaryColor: Colors.purple.shade900,
+          primaryColorDark: Color(0x12005E),
+          primaryColorLight: Colors.purpleAccent.shade700,
+          accentColor: Colors.deepPurple.shade400),
       routes: {
         "tab1": (_) => Tab1Page(),
         "sign": (_) => LoginPage(),
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         "bottom": (_) => BtmNavBarExp(),
         "browser": (_) => BrowserPage(),
         "sign_up1": (_) => SignUp1Page(),
+        "bike_detail": (_) => BikeDetail(),
         "list_load": (_) => ListLoadPage(),
         "settings1": (_) => Settings1Page(),
         "list_vertical": (_) => AnimatedListOnePage(),
