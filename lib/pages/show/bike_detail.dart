@@ -8,7 +8,7 @@ class BikeDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(""),
+        title: Text("Bike Detail"),
         elevation: 0,
       ),
       body: Stack(

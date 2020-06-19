@@ -11,6 +11,7 @@ import 'pages/list/horizontal_list_page.dart';
 import 'pages/list/list_load_page.dart';
 import 'pages/navigation/BtmNavBarExp.dart';
 import 'pages/settings/settings1_page.dart';
+import 'pages/show/hotel1_page.dart';
 import 'pages/sign/sign_page.dart';
 import 'pages/sign/sign_up1_page.dart';
 import 'pages/sign/sign_up_page.dart';
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         "sign": (_) => LoginPage(),
         "show": (_) => MyHomePage(),
         "home1": (_) => Home1Page(),
+        "hotel1": (_) => Hotel1Page(),
         "sign_up": (_) => SignUpPage(),
         "banner": (_) => BannerPage1(),
         "bottom": (_) => BtmNavBarExp(),

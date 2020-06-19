@@ -17,4 +17,5 @@ final List<Map> showItems = [
   {"title": "settings1", "page": "settings1", "icon": Icons.settings},
   {"title": "home1", "page": "home1", "icon": Icons.home},
   {"title": "bike_detail", "page": "bike_detail", "icon": Icons.directions_bike},
+  {"title": "hotel1", "page": "hotel1", "icon": Icons.hotel},
 ];
