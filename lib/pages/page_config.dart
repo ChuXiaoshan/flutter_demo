@@ -8,6 +8,7 @@ final List<Map> mainItems = [
   {"title": "list_load", "page": "list_load", "icon": Icons.list},
   {"title": "bottom", "page": "bottom", "icon": Icons.vertical_align_bottom},
   {"title": "tab1", "page": "tab1", "icon": Icons.tab},
+  {"title": "dialogs", "page": 'dialogs', 'icon': Icons.filter_frames},
 ];
 
 final List<Map> showItems = [
@@ -18,4 +19,5 @@ final List<Map> showItems = [
   {"title": "home1", "page": "home1", "icon": Icons.home},
   {"title": "bike_detail", "page": "bike_detail", "icon": Icons.directions_bike},
   {"title": "hotel1", "page": "hotel1", "icon": Icons.hotel},
+  {"title": "music_player2", "page": 'music_player2'},
 ];

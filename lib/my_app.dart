@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterdemo/pages/dialog/dialogs.dart';
 import 'package:flutterdemo/pages/home/home1_page.dart';
 import 'package:flutterdemo/pages/show/bike_detail.dart';
+import 'package:flutterdemo/pages/show/musicplayer2.dart';
 import 'package:flutterdemo/pages/tab/tab1_page.dart';
 
 import 'my_home_page.dart';
@@ -35,12 +37,14 @@ class MyApp extends StatelessWidget {
         "hotel1": (_) => Hotel1Page(),
         "sign_up": (_) => SignUpPage(),
         "banner": (_) => BannerPage1(),
+        "dialogs": (_) => DialogsPage(),
         "bottom": (_) => BtmNavBarExp(),
         "browser": (_) => BrowserPage(),
         "sign_up1": (_) => SignUp1Page(),
         "bike_detail": (_) => BikeDetail(),
         "list_load": (_) => ListLoadPage(),
         "settings1": (_) => Settings1Page(),
+        "music_player2": (_) => MusicPlayerTwoPage(),
         "list_vertical": (_) => AnimatedListOnePage(),
         "list_horizontal": (_) => HorizontalListPage(),
       },
