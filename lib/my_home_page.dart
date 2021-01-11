@@ -11,12 +11,20 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Map map = ModalRoute.of(context).settings.arguments;
-    items = map != null ? showItems : mainItems;
+    var title = (map == null) ? "Flutter Demo" : map['title'];
+    print(title);
+    if (title == 'Flutter Demo') {
+      items = mainItems;
+    } else if (title == 'show') {
+      items = showItems;
+    } else if (title == 'refresh') {
+      items = refreshItems;
+    }
     primaryColor = map != null ? Colors.cyan.shade900 : Colors.purple.shade900;
     return new Scaffold(
       appBar: new AppBar(
         backgroundColor: primaryColor,
-        title: new Text(map != null ? map["title"] : "Flutter Demo"),
+        title: new Text(title),
         elevation: 10,
       ),
       body: GridView.builder(
