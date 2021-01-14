@@ -16,6 +16,7 @@ class Routers {
   static String bottom = 'bottom';
   static String dialogs = 'dialogs';
   static String refresh = 'refresh';
+  static String browser = 'browser';
   static String listLoad = 'list_load';
   static String easyRefresh1 = 'easy_refresh1';
   static String listVertical = 'list_vertical';
@@ -39,6 +40,7 @@ class Routers {
     router.define(bottom, handler: bottomHandler);
     router.define(dialogs, handler: dialogsHandler);
     router.define(listLoad, handler: listLoadHandler);
+    router.define(browser, handler: browserPageHandler);
     router.define(listVertical, handler: listVerticalHandler);
     router.define(easyRefresh1, handler: easyRefresh1Handler);
     router.define(listHorizontal, handler: listHorizontalHandler);

@@ -24,6 +24,7 @@ import '../pages/sign/sign_page.dart';
 import '../pages/sign/sign_up1_page.dart';
 import '../pages/sign/sign_up_page.dart';
 import '../pages/tab/tab1_page.dart';
+import '../pages/web/browser_page.dart';
 
 //页面没找到时展示的页面
 var notFoundHandler = Handler(handlerFunc: (context, params) => NotFoundPage());
@@ -54,14 +55,18 @@ var dialogsHandler = Handler(handlerFunc: (context, params) => DialogsPage());
 //tab 展示
 var tabHandler = Handler(handlerFunc: (context, params) => Tab1Page());
 
-//列表加载展示
-var listLoadHandler = Handler(handlerFunc: (context, params) => ListLoadPage());
-
 //列表纵向展示页面
 var listVerticalHandler = Handler(handlerFunc: (context, params) => AnimatedListOnePage());
 
 //列表横向展示
 var listHorizontalHandler = Handler(handlerFunc: (context, params) => HorizontalListPage());
+
+//列表加载展示
+var listLoadHandler = Handler(handlerFunc: (context, params) {
+  var title = params['title']?.first;
+  var color = Color(int.parse(params['color']?.first));
+  return ListLoadPage(title: title, primaryColor: color);
+});
 
 //sign
 var signHandler = Handler(handlerFunc: (context, params) {
@@ -117,4 +122,15 @@ var musicPlayer2Handler = Handler(handlerFunc: (context, params) {
   var color = Color(int.parse(params['color']?.first));
   var title = params['title']?.first;
   return MusicPlayer2Page(title: title, primaryColor: color);
+});
+
+//browser_page
+var browserPageHandler = Handler(handlerFunc: (context, params) {
+  print("color1---$params");
+  var color = Color(int.parse(params['color']?.first));
+  print("color1---$color");
+  var title = params['title']?.first;
+  var url = params['url']?.first;
+  print("url---$url");
+  return BrowserPage(title: title, primaryColor: color, url: url);
 });

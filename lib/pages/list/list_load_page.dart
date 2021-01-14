@@ -4,12 +4,29 @@ import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../routers/application.dart';
+import '../../routers/routers.dart';
+
 class ListLoadPage extends StatefulWidget {
+  ListLoadPage({String title, Color primaryColor, String url})
+      : this.title = title,
+        this.primaryColor = primaryColor;
+
+  final Color primaryColor;
+  final String title;
+
   @override
-  State<StatefulWidget> createState() => _ListLoadPageState();
+  State<StatefulWidget> createState() => _ListLoadPageState(title: title, primaryColor: primaryColor);
 }
 
 class _ListLoadPageState extends State<ListLoadPage> {
+  _ListLoadPageState({String title, Color primaryColor, String url})
+      : this.title = title,
+        this.primaryColor = primaryColor;
+
+  final Color primaryColor;
+  final String title;
+
   List data = [];
   int page = 0;
   bool loading = false;
@@ -32,7 +49,8 @@ class _ListLoadPageState extends State<ListLoadPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
-        title: Text("Infinite ListView"),
+        backgroundColor: primaryColor,
+        title: Text(title),
       ),
       body: RefreshIndicator(
         onRefresh: _onRefresh,
@@ -95,10 +113,13 @@ class _ListLoadPageState extends State<ListLoadPage> {
   _itemWidget(BuildContext context, int index) {
     return ListTile(
       onTap: () {
-        Navigator.of(context).pushNamed(
-          "browser",
-          arguments: {"title": data[index]['title'], "url": data[index]['link']},
-        );
+        var url = data[index]['link'];
+        var title = data[index]['title'];
+        var color = primaryColor.value.toString();
+        print("color---$color");
+        var path = '${Routers.browser}?title=heheh&color=$color&url=$url';
+        print(path);
+        Application.router.navigateTo(context, path);
       },
       title: Text(data[index]['title']),
       subtitle: Text(data[index]['chapterName']),

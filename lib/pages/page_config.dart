@@ -5,7 +5,7 @@ final List<Map> mainItems = [
   {"title": "banner", "page": "banner", "icon": Icons.photo},
   {"title": "list_vertical", "page": "list_vertical", "icon": Icons.list},
   {"title": "list_horizontal", "page": "list_horizontal", "icon": Icons.list},
-  {"title": "list_load", "page": "list_load", "icon": Icons.list},
+  {"title": "list_load", "page": "list_load", "icon": Icons.list, "color": Colors.pinkAccent.value.toString()},
   {"title": "bottom", "page": "bottom", "icon": Icons.vertical_align_bottom},
   {"title": "tab1", "page": "tab1", "icon": Icons.tab},
   {"title": "dialogs", "page": 'dialogs', 'icon': Icons.filter_frames},
