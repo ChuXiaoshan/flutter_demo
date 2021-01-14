@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterdemo/widget/PNetworkImage.dart';
+
+import '../../widget/PNetworkImage.dart';
 
 final List<Map> articles = [
   {

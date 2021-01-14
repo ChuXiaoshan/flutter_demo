@@ -1,9 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
-import 'package:flutterdemo/widget/PNetworkImage.dart';
+
+import '../../widget/PNetworkImage.dart';
 
 class SignUpPage extends StatelessWidget {
+  SignUpPage({String title, Color primaryColor})
+      : this.primaryColor = primaryColor,
+        this.title = title;
+
+  final String title;
+  final Color primaryColor;
+
   _buildPageContent(BuildContext context) {
     return Container(
       color: Colors.blue.shade100,

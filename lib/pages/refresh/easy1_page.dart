@@ -4,12 +4,24 @@ import 'package:flutter_easyrefresh/easy_refresh.dart';
 
 import '../../widget/sample_list_item.dart';
 
-class Easy1 extends StatefulWidget {
-  createState() => _Easy1();
+class Easy1Page extends StatefulWidget {
+  Easy1Page({String title = 'Flutter Demo', Color primaryColor})
+      : this.primaryColor = primaryColor,
+        this.title = title;
+
+  final String title;
+  final Color primaryColor;
+
+  createState() => _Easy1Page(title: title, primaryColor: primaryColor);
 }
 
-class _Easy1 extends State<Easy1> {
+class _Easy1Page extends State<Easy1Page> {
+  _Easy1Page({String title, Color primaryColor})
+      : this.primaryColor = primaryColor,
+        this.title = title;
+
   Color primaryColor;
+  String title;
 
   EasyRefreshController _controller;
 
@@ -24,9 +36,6 @@ class _Easy1 extends State<Easy1> {
 
   @override
   Widget build(BuildContext context) {
-    Map map = ModalRoute.of(context).settings.arguments;
-    var title = map['title'];
-    primaryColor = title == "easy1" ? Colors.cyan.shade900 : Colors.purple.shade900;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: primaryColor,

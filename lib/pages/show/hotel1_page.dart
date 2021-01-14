@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterdemo/widget/PNetworkImage.dart';
+
+import '../../widget/PNetworkImage.dart';
 
 final List rooms = [
   {
@@ -26,6 +27,13 @@ final List rooms = [
 ];
 
 class Hotel1Page extends StatelessWidget {
+  Hotel1Page({String title, Color primaryColor})
+      : this.primaryColor = primaryColor,
+        this.title = title;
+
+  final String title;
+  final Color primaryColor;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

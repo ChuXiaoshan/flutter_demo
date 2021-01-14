@@ -2,8 +2,15 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
-class MusicPlayerTwoPage extends StatelessWidget {
-  List<String> images = [
+class MusicPlayer2Page extends StatelessWidget {
+  MusicPlayer2Page({String title = 'Flutter Demo', Color primaryColor})
+      : this.primaryColor = primaryColor,
+        this.title = title;
+
+  final String title;
+  final Color primaryColor;
+
+  final List<String> images = [
     'https://w.wallhaven.cc/full/96/wallhaven-967zyk.jpg',
     'https://w.wallhaven.cc/full/96/wallhaven-96qy3w.jpg',
     'https://w.wallhaven.cc/full/ym/wallhaven-ym1wp7.jpg',
@@ -13,11 +20,11 @@ class MusicPlayerTwoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: primaryColor,
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.black),
         title: Text(
-          'Music Player',
+          title,
           style: TextStyle(color: Colors.black),
         ),
         actions: <Widget>[
