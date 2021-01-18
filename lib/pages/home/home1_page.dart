@@ -1,10 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:flutterdemo/pages/home/rounded_container.dart';
-import 'package:flutterdemo/widget/PNetworkImage.dart';
+
+import '../../pages/home/rounded_container.dart';
+import '../../widget/PNetworkImage.dart';
 
 class Home1Page extends StatelessWidget {
+  Home1Page({String title, Color primaryColor})
+      : this.primaryColor = primaryColor,
+        this.title = title;
+
+  final String title;
+  final Color primaryColor;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

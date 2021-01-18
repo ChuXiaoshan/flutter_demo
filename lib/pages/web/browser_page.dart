@@ -3,18 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class BrowserPage extends StatelessWidget {
-   String url;
-   String title;
-   Map arguments;
+  BrowserPage({String title, Color primaryColor, String url})
+      : this.title = title,
+        this.primaryColor = primaryColor,
+        this.url = url;
+
+  final Color primaryColor;
+  final String url;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
-    arguments = ModalRoute.of(context).settings.arguments;
-    url = arguments['url'];
-    title = arguments['title'];
-
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: primaryColor,
         title: Text(title),
       ),
       body: WebView(

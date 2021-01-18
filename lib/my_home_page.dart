@@ -1,22 +1,33 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'pages/page_config.dart';
+import './pages/page_config.dart';
+import './routers/application.dart';
 
 // ignore: must_be_immutable
 class MyHomePage extends StatelessWidget {
+  MyHomePage({String title = 'Flutter Demo', Color primaryColor})
+      : this.title = title,
+        this.primaryColor = primaryColor;
+
+  String title;
   List<Map> items;
   Color primaryColor;
 
   @override
   Widget build(BuildContext context) {
-    Map map = ModalRoute.of(context).settings.arguments;
-    items = map != null ? showItems : mainItems;
-    primaryColor = map != null ? Colors.cyan.shade900 : Colors.purple.shade900;
+    if (title == 'Flutter Demo') {
+      items = mainItems;
+    } else if (title == 'show') {
+      items = showItems;
+    } else if (title == 'refresh') {
+      items = refreshItems;
+    }
+    primaryColor = (primaryColor == null) ? Colors.purple.shade900 : primaryColor;
     return new Scaffold(
       appBar: new AppBar(
         backgroundColor: primaryColor,
-        title: new Text(map != null ? map["title"] : "Flutter Demo"),
+        title: new Text(title),
         elevation: 10,
       ),
       body: GridView.builder(
@@ -40,7 +51,10 @@ class MyHomePage extends StatelessWidget {
       shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4.0))),
       child: InkWell(
         onTap: () {
-          Navigator.of(context).pushNamed(items[index]['page'], arguments: {"title": items[index]['title']});
+          Application.router.navigateTo(
+            context,
+            '${items[index]['page']}?title=${items[index]['title']}&color=${items[index]['color']}',
+          );
         },
         borderRadius: new BorderRadius.circular(4.0),
         child: Column(

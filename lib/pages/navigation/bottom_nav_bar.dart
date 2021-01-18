@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class BtmNavBarExp extends StatefulWidget {
-  const BtmNavBarExp({Key key}) : super(key: key);
+class BottomNavBar extends StatefulWidget {
+  const BottomNavBar({Key key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _BtmNavBarExpState();
+  State<StatefulWidget> createState() => _BottomNavBarState();
 }
 
-class _BtmNavBarExpState extends State<BtmNavBarExp> {
+class _BottomNavBarState extends State<BottomNavBar> {
   int _currentTabIndex = 2;
 
   @override

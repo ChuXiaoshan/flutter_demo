@@ -2,9 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:flutterdemo/widget/PNetworkImage.dart';
 
-class BannerPage1 extends StatelessWidget {
+import '../../widget/PNetworkImage.dart';
+
+class BannerPage extends StatelessWidget {
   final List<String> images = [
     "https://w.wallhaven.cc/full/ey/wallhaven-eymzjk.jpg",
     "https://w.wallhaven.cc/full/md/wallhaven-md5z28.jpg",

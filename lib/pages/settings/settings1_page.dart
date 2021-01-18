@@ -4,13 +4,27 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Settings1Page extends StatefulWidget {
+  Settings1Page({String title, Color primaryColor})
+      : this.primaryColor = primaryColor,
+        this.title = title;
+
+  final String title;
+  final Color primaryColor;
+
   @override
   State<StatefulWidget> createState() {
-    return _Settings1PageState();
+    return _Settings1PageState(primaryColor: primaryColor, title: title);
   }
 }
 
 class _Settings1PageState extends State<Settings1Page> {
+  _Settings1PageState({String title, Color primaryColor})
+      : this.primaryColor = primaryColor,
+        this.title = title;
+
+  final String title;
+  final Color primaryColor;
+
   bool _dark;
   bool _isReceive = false;
 

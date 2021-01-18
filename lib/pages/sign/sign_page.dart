@@ -2,14 +2,28 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class LoginPage extends StatefulWidget {
+class SignPage extends StatefulWidget {
+  SignPage({String title, Color primaryColor})
+      : this.primaryColor = primaryColor,
+        this.title = title;
+
+  final String title;
+  final Color primaryColor;
+
   @override
   State<StatefulWidget> createState() {
-    return _LoginPageState();
+    return _SignPageState(title: this.title, primaryColor: this.primaryColor);
   }
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignPageState extends State<SignPage> {
+  _SignPageState({String title, Color primaryColor})
+      : this.primaryColor = primaryColor,
+        this.title = title;
+
+  final String title;
+  final Color primaryColor;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

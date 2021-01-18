@@ -1,9 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SignUp1Page extends StatelessWidget {
+  SignUp1Page({String title, Color primaryColor})
+      : this.primaryColor = primaryColor,
+        this.title = title;
+
+  final String title;
+  final Color primaryColor;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

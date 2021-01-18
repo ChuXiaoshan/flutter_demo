@@ -1,14 +1,23 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterdemo/pages/list/animated_list_one.dart';
-import 'package:flutterdemo/widget/PNetworkImage.dart';
+
+import '../../pages/list/animated_list_one.dart';
+import '../../widget/PNetworkImage.dart';
 
 class BikeDetail extends StatelessWidget {
+  BikeDetail({String title, Color primaryColor})
+      : this.primaryColor = primaryColor,
+        this.title = title;
+
+  final String title;
+  final Color primaryColor;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Bike Detail"),
+        backgroundColor: primaryColor,
+        title: Text(title),
         elevation: 0,
       ),
       body: Stack(

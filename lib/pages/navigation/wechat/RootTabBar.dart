@@ -2,7 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterdemo/pages/navigation/wechat/ComMomBar.dart';
+
+import '../../../pages/navigation/wechat/ComMomBar.dart';
 
 class RootTabBar extends StatefulWidget {
   RootTabBar({this.pages, this.currentIndex = 0});
