@@ -6,6 +6,7 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 
+import '../demo_provider/provider_cart_page.dart';
 import '../my_home_page.dart';
 import '../pages/banners/banner_page.dart';
 import '../pages/dialog/dialogs.dart';
@@ -56,10 +57,16 @@ var dialogsHandler = Handler(handlerFunc: (context, params) => DialogsPage());
 var tabHandler = Handler(handlerFunc: (context, params) => Tab1Page());
 
 //列表纵向展示页面
-var listVerticalHandler = Handler(handlerFunc: (context, params) => AnimatedListOnePage());
+var listVerticalHandler =
+    Handler(handlerFunc: (context, params) => AnimatedListOnePage());
 
 //列表横向展示
-var listHorizontalHandler = Handler(handlerFunc: (context, params) => HorizontalListPage());
+var listHorizontalHandler =
+    Handler(handlerFunc: (context, params) => HorizontalListPage());
+
+//自定义Provider 演示页面
+var providerCartHandler =
+    Handler(handlerFunc: (context, params) => ProviderCartPage());
 
 //列表加载展示
 var listLoadHandler = Handler(handlerFunc: (context, params) {

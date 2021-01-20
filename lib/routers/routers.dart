@@ -21,6 +21,7 @@ class Routers {
   static String easyRefresh1 = 'easy_refresh1';
   static String listVertical = 'list_vertical';
   static String listHorizontal = 'list_horizontal';
+  static String providerCart = 'provider_cart';
 
   static String sign = 'sign';
   static String home1 = 'home1';
@@ -44,6 +45,7 @@ class Routers {
     router.define(listVertical, handler: listVerticalHandler);
     router.define(easyRefresh1, handler: easyRefresh1Handler);
     router.define(listHorizontal, handler: listHorizontalHandler);
+    router.define(providerCart, handler: providerCartHandler);
 
     router.define(sign, handler: signHandler);
     router.define(home1, handler: home1Handler);

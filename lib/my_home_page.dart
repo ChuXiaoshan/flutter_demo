@@ -23,7 +23,8 @@ class MyHomePage extends StatelessWidget {
     } else if (title == 'refresh') {
       items = refreshItems;
     }
-    primaryColor = (primaryColor == null) ? Colors.purple.shade900 : primaryColor;
+    primaryColor =
+        (primaryColor == null) ? Colors.purple.shade900 : primaryColor;
     return new Scaffold(
       appBar: new AppBar(
         backgroundColor: primaryColor,
@@ -48,7 +49,8 @@ class MyHomePage extends StatelessWidget {
   _buildItem(BuildContext context, int index) {
     return Card(
       elevation: 2,
-      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4.0))),
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(4.0))),
       child: InkWell(
         onTap: () {
           Application.router.navigateTo(
