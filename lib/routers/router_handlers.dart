@@ -6,6 +6,7 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 
+import '../demo_inherited/inherited_test_page.dart';
 import '../demo_provider/provider_cart_page.dart';
 import '../my_home_page.dart';
 import '../pages/banners/banner_page.dart';
@@ -67,6 +68,10 @@ var listHorizontalHandler =
 //自定义Provider 演示页面
 var providerCartHandler =
     Handler(handlerFunc: (context, params) => ProviderCartPage());
+
+//Inherited_widget 演示页面
+var inheritedHandler =
+    Handler(handlerFunc: (context, params) => InheritedTestPage());
 
 //列表加载展示
 var listLoadHandler = Handler(handlerFunc: (context, params) {

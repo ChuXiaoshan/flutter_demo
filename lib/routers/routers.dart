@@ -22,6 +22,7 @@ class Routers {
   static String listVertical = 'list_vertical';
   static String listHorizontal = 'list_horizontal';
   static String providerCart = 'provider_cart';
+  static String inheritedPage = 'inherited_page';
 
   static String sign = 'sign';
   static String home1 = 'home1';
@@ -46,6 +47,7 @@ class Routers {
     router.define(easyRefresh1, handler: easyRefresh1Handler);
     router.define(listHorizontal, handler: listHorizontalHandler);
     router.define(providerCart, handler: providerCartHandler);
+    router.define(inheritedPage, handler: inheritedHandler);
 
     router.define(sign, handler: signHandler);
     router.define(home1, handler: home1Handler);

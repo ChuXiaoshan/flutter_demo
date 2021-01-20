@@ -54,6 +54,11 @@ final List<Map> mainItems = [
     "page": 'provider_cart',
     'icon': Icons.directions_car,
   },
+  {
+    "title": "inherited_page",
+    "page": 'inherited_page',
+    'icon': Icons.code,
+  },
 ];
 
 final List<Map> showItems = [
