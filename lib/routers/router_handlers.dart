@@ -26,6 +26,7 @@ import '../pages/sign/sign_page.dart';
 import '../pages/sign/sign_up1_page.dart';
 import '../pages/sign/sign_up_page.dart';
 import '../pages/tab/tab1_page.dart';
+import '../pages/theme/theme_test_page.dart';
 import '../pages/web/browser_page.dart';
 
 //页面没找到时展示的页面
@@ -72,6 +73,9 @@ var providerCartHandler =
 //Inherited_widget 演示页面
 var inheritedHandler =
     Handler(handlerFunc: (context, params) => InheritedTestPage());
+
+//Theme 演示页面
+var themeHandler = Handler(handlerFunc: (context, params) => ThemeTestPage());
 
 //列表加载展示
 var listLoadHandler = Handler(handlerFunc: (context, params) {

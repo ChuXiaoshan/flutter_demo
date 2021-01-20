@@ -59,6 +59,11 @@ final List<Map> mainItems = [
     "page": 'inherited_page',
     'icon': Icons.code,
   },
+  {
+    "title": "theme_test",
+    "page": 'theme_test',
+    'icon': Icons.style_outlined,
+  },
 ];
 
 final List<Map> showItems = [
